@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home_page-Contact Management Application</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='home_page.css') }}">
+
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to Your Contact Management Application </h1>
+<div class="inner_container">
+
+    <a href="{{ url_for('add_contact') }}"> Click here to Add a new Contact
+        </a>
+</div>
+<div class="view_contacts">
+    <a href="{{ url_for('view_contact') }}"> Click here to view all Contact
+    </a>
+
+</div>
+
+
+
+
+</div>
+
+</body>
+</html>

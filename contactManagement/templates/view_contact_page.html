@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View_contact_page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_contact.css') }}">
+</head>
+<body>
+<h1>All Saved Contacts</h1>
+{% if contacts %}
+ <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact['first_name'] }}</td>
+                <td>{{ contact['last_name'] }}</td>
+                <td>{{ contact['email'] }}</td>
+                <td>{{ contact['phone_number'] }}</td>
+                <td>{{ contact['house_address'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No contact/s Has been saved.</p>
+{% endif %}
+
+<br><br>
+    <a href="{{ url_for('home_page') }}">
+      <button>Back to Home</button>
+    </a>
+</body>
+</html>
